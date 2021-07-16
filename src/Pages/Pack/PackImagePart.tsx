@@ -1,14 +1,20 @@
-import { Pack } from "../../Models/Card"
+import styled from 'styled-components';
+
+const PackImage = styled.img`
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: 30px auto;
+`
 
 
 interface ImageUrlProps {
     imageUrl: string;
 }
 
-
 const PackImagePart: React.FC<ImageUrlProps> = ({ imageUrl }): JSX.Element => {
     return <div>
-        <img src={imageUrl} alt="" />
+        <PackImage src={imageUrl} alt="" />
     </div>
 }
 

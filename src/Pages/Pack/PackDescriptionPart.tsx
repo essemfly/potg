@@ -1,9 +1,15 @@
+import styled from 'styled-components';
 import { Pack } from "../../Models/Card"
+import AvatarComponent from "../../Components/Avatar";
 
 interface PackInfoProps {
     pack: Pack;
 }
 
+const CreaterDiv = styled.div`
+    display: inline-block;
+    margin-right: 20px;
+`
 
 const PackDescriptionPart: React.FC<PackInfoProps> = ({ pack }): JSX.Element => {
     return <div>
@@ -11,7 +17,19 @@ const PackDescriptionPart: React.FC<PackInfoProps> = ({ pack }): JSX.Element => 
             <h2>{pack.name}</h2>
             가격: {pack.price}
         </div>
-        구매하기
+        <br />
+        <pre>
+            {pack.description}
+        </pre>
+        <h4>creaters</h4>
+        <div>
+            {pack.creaters.map(function avatarCreator(creater) {
+                return <CreaterDiv key={creater.id}>
+                    <p>{creater.name}</p>
+                    <AvatarComponent avatarUrl={creater.avatarUrl} />
+                </CreaterDiv>
+            })}
+        </div>
     </div>
 }
 

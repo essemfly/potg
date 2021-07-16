@@ -21,7 +21,8 @@ export type User = {
     name: string
 }
 
-export type Creator = {
+export type Creater = {
+    id: number;
     name: string
     email: string
     twitchUrl: string
@@ -34,7 +35,7 @@ export type Pack = {
     price: number;
     imageUrl: string;
     description: string;
-    creators: Creator[];
+    creaters: Creater[];
     cardInfos: CardInfo[];
     createdAt: Date;
 }
@@ -49,7 +50,7 @@ export type CardDistribution = {
 
 export type CardInfo = {
     id: number
-    creator: Creator
+    creater: Creater
     name: string
     description: string
     videoUrl: string
