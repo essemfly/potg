@@ -5,7 +5,7 @@ import MyCardsPage from './MyCardsPage';
 import PackInfoPage from './PackInfoPage';
 import PackOpeningPage from './PackOpeningPage';
 
-const Router = () => {
+const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Switch>

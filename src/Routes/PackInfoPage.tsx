@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-const PackInfoPage = () => {
+const PackInfoPage = ():JSX.Element => {
   return <div>Hello This is Pack buy page</div>;
 };
 

@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-const MyCardsPage = () => {
+const MyCardsPage = ():JSX.Element => {
   return <div>Hello This is mycards buy page</div>;
 };
 
