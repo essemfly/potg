@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Container } from '@material-ui/core';
 
 import Routes from './Routes/router';
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import bgImg from "./Components/overwatch-bg.jpg"
+import Header from "./Pages/Header";
+import Footer from "./Pages/Footer";
+import bgImg from "./Pages/overwatch-bg.jpg"
 
 
 const AppDiv = styled.div`

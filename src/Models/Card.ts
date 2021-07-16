@@ -17,47 +17,50 @@ export enum CardStatus {
 }
 
 export type User = {
-    email: String
-    name: String
+    email: string
+    name: string
 }
 
 export type Creator = {
-    name: String
-    email: String
-    twitchUrl: String
+    name: string
+    email: string
+    twitchUrl: string
+    avatarUrl: string
 }
 
-export type PackModel = {
-    id: Number;
-    name: String;
-    description: String;
+export type Pack = {
+    id: number;
+    name: string;
+    price: number;
+    imageUrl: string;
+    description: string;
     creators: Creator[];
-    cards: CardInfo[];
+    cardInfos: CardInfo[];
     createdAt: Date;
 }
 
 export type CardDistribution = {
-    total: Number
-    active: Number
-    onsale: Number
-    burned: Number
-    preserved: Number
+    total: number
+    active: number
+    onsale: number
+    burned: number
+    preserved: number
 }
 
 export type CardInfo = {
-    id: Number
-    creator: String
-    name: String
-    description: String
-    videoUrl: String
+    id: number
+    creator: Creator
+    name: string
+    description: string
+    videoUrl: string
     gameType: GameType
     cardClass: CardClass
     distribution: CardDistribution
 }
 
 export type Card = {
-    cardIndex: Number
+    cardIndex: number
     cardInfo: CardInfo
-    owner: User
+    owner: User | null
     cardStatus: CardStatus
 }
