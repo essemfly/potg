@@ -19,7 +19,7 @@ const PackDescriptionPart: React.FC<PackInfoProps> = ({
 }): JSX.Element => {
   const history = useHistory();
   const handleBuyClick: React.MouseEventHandler = () => {
-    history.push('/open');
+    history.push('/opening');
   };
 
   return (

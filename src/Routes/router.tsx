@@ -12,7 +12,7 @@ const Router = (): JSX.Element => {
         <Route exact path="/" component={PackInfoPage} />
         <Route path="/mycards" component={MyCardsPage} />
         <Route path="/cards" component={CardDetailPage} />
-        <Route path="/open" component={PackOpeningPage} />
+        <Route path="/opening" component={PackOpeningPage} />
         {/* Not Found */}
         <Route component={() => <Redirect to="/" />} />
       </Switch>
