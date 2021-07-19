@@ -1,18 +1,12 @@
-import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { Pack } from '../../Models/Card';
 
-import AvatarComponent from '../../Components/Avatar';
+import Creater from '../../Components/Creater';
 
 interface PackInfoProps {
   pack: Pack;
 }
-
-const CreaterDiv = styled.div`
-  display: inline-block;
-  margin-right: 20px;
-`;
 
 const PackDescriptionPart: React.FC<PackInfoProps> = ({
   pack,
@@ -40,10 +34,7 @@ const PackDescriptionPart: React.FC<PackInfoProps> = ({
       <div>
         {pack.creaters.map(function avatarCreator(creater) {
           return (
-            <CreaterDiv key={creater.id}>
-              <p>{creater.name}</p>
-              <AvatarComponent avatarUrl={creater.avatarUrl} />
-            </CreaterDiv>
+            <Creater key={creater.id} creater={creater} />
           );
         })}
       </div>

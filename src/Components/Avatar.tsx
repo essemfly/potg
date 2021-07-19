@@ -5,7 +5,6 @@ const AvatarImage = styled.img`
     height: 50px;
 `
 
-
 interface AvatarProps {
     avatarUrl: string;
 }

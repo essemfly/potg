@@ -98,6 +98,7 @@ export const sampleCards: Card[] = []
 
 for (let i = 0; i < 3; i += 1) {
   const card: Card = {
+    id: 37*i,
     cardIndex: i,
     cardInfo: sampleCardInfos[i * 37 % 12],
     owner: null,

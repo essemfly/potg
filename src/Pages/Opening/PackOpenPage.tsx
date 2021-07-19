@@ -15,24 +15,6 @@ const moveGradient = keyframes`
     }
 `;
 
-const transparenting = keyframes`
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.2;
-}
-`;
-
-const whitening = keyframes`
-    from {
-        background-color: black;
-    }
-    to {
-        background-color: white;
-}
-`;
-
 const PackImageDiv = styled.div<IProps>`
   ${({ active }) =>
     active &&
@@ -99,21 +81,19 @@ const BuyButton = styled(Button)({
   margin: '0 auto',
 });
 
-const BeforeOpeningPage: React.FC<CardOpeningProps> = ({
+const PackOpenPage: React.FC<CardOpeningProps> = ({
   handleCardOpen,
   pack,
 }): JSX.Element => {
   const [isActive, setActive] = useState(false);
   const handleCardOpenEvent = (event: React.MouseEvent) => {
     setActive(!isActive);
-    console.log('HOIT');
     document.body.classList.toggle('body_changer3');
-    console.log('2');
     setTimeout(() => handleCardOpen(event), 2000);
   };
   return (
     <div style={{ zIndex: 1 }}>
-      <h1 style={{ textAlign: 'center' }}>{pack.name}</h1>
+      <h1 style={{ textAlign: 'center', margin: 0, padding: "30px 0", }}>{pack.name}</h1>
       <br />
       <PackImageDiv active={isActive}>
         <PackImage src={pack.imageUrl} />
@@ -131,4 +111,4 @@ const BeforeOpeningPage: React.FC<CardOpeningProps> = ({
   );
 };
 
-export default BeforeOpeningPage;
+export default PackOpenPage;

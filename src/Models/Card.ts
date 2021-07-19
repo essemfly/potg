@@ -60,6 +60,7 @@ export type CardInfo = {
 }
 
 export type Card = {
+    id: number
     cardIndex: number
     cardInfo: CardInfo
     owner: User | null

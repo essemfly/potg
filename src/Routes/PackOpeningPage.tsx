@@ -1,9 +1,8 @@
-import { Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 
-import { samplePack } from '../Models/Mockdata';
-import BeforeOpeningPage from '../Pages/Opening/BeforeOpeningPage';
-import AfterOpeningPage from '../Pages/Opening/AfterOpeningPage';
+import { samplePack, sampleCards } from '../Models/Mockdata';
+import PackOpenPage from '../Pages/Opening/PackOpenPage';
+import CardOpenPage from '../Pages/Opening/CardOpenPage';
 
 const PakOpeningPage = (): JSX.Element => {
   const [isOpenCard, setIsOpenCard] = useState(false);
@@ -14,21 +13,14 @@ const PakOpeningPage = (): JSX.Element => {
 
   return (
     <div>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="flex-start"
-      >
-        {isOpenCard === false ? (
-          <BeforeOpeningPage
-            pack={samplePack}
-            handleCardOpen={handleCardOpen}
-          />
-        ) : (
-          <AfterOpeningPage />
-        )}
-      </Grid>
+      {isOpenCard === false ? (
+        <PackOpenPage
+          pack={samplePack}
+          handleCardOpen={handleCardOpen}
+        />
+      ) : (
+        <CardOpenPage cards={sampleCards}/>
+      )}
     </div>
   );
 };
