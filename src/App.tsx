@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import Routes from './Routes/router';
 import Header from './Pages/Header';
 import Footer from './Pages/Footer';
-import bgImg from './Pages/overwatch-bg.jpg';
+// import bgImg from './Pages/overwatch-bg.jpg';
 
 const AppDiv = styled.div`
   height: 100%;
@@ -13,7 +13,7 @@ const AppDiv = styled.div`
 const BgDiv = styled.div`
   width: 100%;
   min-height: 100%;
-  background: url(${bgImg}), linear-gradient(black, black);
+  background-color: black;
   background-size: contain;
   z-index: -100;
 `;

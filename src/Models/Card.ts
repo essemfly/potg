@@ -53,10 +53,12 @@ export type CardInfo = {
     creater: Creater
     name: string
     description: string
+    images: string[]
     videoUrl: string
     gameType: GameType
     cardClass: CardClass
     distribution: CardDistribution
+    livedAt: Date;
 }
 
 export type Card = {

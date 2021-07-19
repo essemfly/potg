@@ -84,11 +84,13 @@ for (let i = 0; i < videoUrls.length; i += 1) {
     id: i,
     creater: creaters[i],
     name: cardNames[i],
+    images: ["https://picsum.photos/300/300", "https://picsum.photos/300/300", "https://picsum.photos/300/300"],
     description: descriptions[i],
     videoUrl: videoUrls[i],
     gameType: GameType.Overwatch,
     cardClass: CardClass.Rare,
-    distribution: commonDistribution
+    distribution: commonDistribution,
+    livedAt: new Date(),
 
   }
   sampleCardInfos.push(cardInfo)
@@ -98,7 +100,7 @@ export const sampleCards: Card[] = []
 
 for (let i = 0; i < 3; i += 1) {
   const card: Card = {
-    id: 37*i,
+    id: 37 * i,
     cardIndex: i,
     cardInfo: sampleCardInfos[i * 37 % 12],
     owner: null,

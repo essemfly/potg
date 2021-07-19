@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
-import React, {useState} from 'react';
+
+import React, { useState } from 'react';
 import { Card, CardClass, GameType } from '../Models/Card';
 import Creater from './Creater';
 import P1Img from './p1.jpeg'
