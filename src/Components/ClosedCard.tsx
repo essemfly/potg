@@ -75,9 +75,7 @@ const ClosedCard: React.FC<CardProp> = ({ card, openCard, packIndex }): JSX.Elem
             <p>Description: {card.cardInfo.description} </p>
             <p>Game: {GameType[card.cardInfo.gameType]}</p>
             <p>Type: {CardClass[card.cardInfo.cardClass]}</p>
-
         </div>
-
     </Grid>
 }
 

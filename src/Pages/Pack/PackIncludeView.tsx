@@ -7,10 +7,12 @@ interface PackInfoProps {
 }
 
 const PackIncludePart: React.FC<PackInfoProps> = ({ cardInfos }): JSX.Element => {
-    return <Grid container item xs={12} spacing={5} justifyContent="center" alignItems="flex-start">
+    return <Grid container item xs={12} spacing={4} justifyContent="center" alignItems="flex-start">
         {cardInfos.map(function createCard(cardInfo) {
             return (
-                <BriefCard key={cardInfo.id} cardInfo={cardInfo} />
+                <Grid item xs={4} key={cardInfo.id} >
+                    <BriefCard cardInfo={cardInfo} />
+                </Grid>
             )
         })}
     </Grid>

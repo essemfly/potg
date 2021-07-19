@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import { Grid } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
 import { Card, GameType, CardClass } from '../../Models/Card';
 import ClosedCard from '../../Components/ClosedCard';
 import Creater from '../../Components/Creater';
+
 
 interface CardsProps {
   cards: Card[]
@@ -29,7 +32,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const GotoMypageButtonDiv = styled.div`
+  margin: 30px auto;
+  text-align: center;
+`;
+
+const GoButton = styled(Button)({
+  margin: '0 auto',
+});
+
 const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
+  const history = useHistory()
   const [cardsOpened, setCardsOpened] = useState(new Array(cards.length).fill(false));
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
@@ -51,6 +64,9 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
     setOpen(false)
   };
 
+  const handleGoMyPage = () => {
+    history.push("/mycards")
+  }
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
@@ -94,6 +110,15 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
       {cards.map(function createCard(card, i) {
         return <ClosedCard key={card.id} card={card} packIndex={i} openCard={openCard} />
       })}
+      <GotoMypageButtonDiv>
+        <GoButton
+          variant="outlined"
+          color="primary"
+          onClick={handleGoMyPage}
+        >
+          내 카드 보러가기
+        </GoButton>
+      </GotoMypageButtonDiv>
     </Grid>
   );
 };
