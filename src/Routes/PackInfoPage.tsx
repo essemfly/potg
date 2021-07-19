@@ -1,9 +1,9 @@
 import { Grid } from '@material-ui/core';
 
 import { samplePack } from '../Models/Mockdata';
-import PackIncludePart from '../Pages/Pack/PackIncludePart';
-import PackImagePart from '../Pages/Pack/PackImagePart';
-import PackDescriptionPart from '../Pages/Pack/PackDescriptionPart';
+import PackIncludeView from '../Pages/Pack/PackIncludeView';
+import PackImageView from '../Pages/Pack/PackImageVIew';
+import PackDescriptionView from '../Pages/Pack/PackDescriptionVIew';
 
 const PackInfoPage: React.FC = (): JSX.Element => {
   return (
@@ -15,14 +15,14 @@ const PackInfoPage: React.FC = (): JSX.Element => {
         alignItems="flex-start"
       >
         <Grid item xs={8}>
-          <PackImagePart imageUrl={samplePack.imageUrl.toString()} />
+          <PackImageView imageUrl={samplePack.imageUrl.toString()} />
         </Grid>
         <Grid item xs={4}>
-          <PackDescriptionPart pack={samplePack} />
+          <PackDescriptionView pack={samplePack} />
         </Grid>
       </Grid>
       <h2>포함된 카드들</h2>
-        <PackIncludePart cardInfos={samplePack.cardInfos} />
+        <PackIncludeView cardInfos={samplePack.cardInfos} />
     </div>
   );
 };

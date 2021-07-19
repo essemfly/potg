@@ -42,7 +42,7 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
 
     if (!cardsOpened[i]) {
       cardsOpened[i] = true
-      setCardsOpened(cardsOpened)      
+      setCardsOpened(cardsOpened)
       setTimeout(() => setOpen(true), 2500);
     }
   }
@@ -56,10 +56,11 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">{cards[currentCard].cardInfo.name}</h2>
       <Grid container justifyContent="center" spacing={5}>
-        <Grid item xs={6}><video width="320" height="240" controls autoPlay>
-          <source src={cards[currentCard].cardInfo.videoUrl} type="video/mp4" />
-          <track kind="captions" srcLang="kr" label="caption" default />
-        </video></Grid>
+        <Grid item xs={6}>
+          <video width="320" height="240" controls autoPlay>
+            <source src={cards[currentCard].cardInfo.videoUrl} type="video/mp4" />
+            <track kind="captions" srcLang="kr" label="caption" default />
+          </video></Grid>
         <Grid item xs={6}>
           <p>
             Index: {cards[currentCard].cardIndex}

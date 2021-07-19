@@ -30,10 +30,6 @@ const BriefCard: React.FC<CardProps> = ({ cardInfo }): JSX.Element => {
             </div>
             <div>
                 <img src={cardInfo.images[0]} alt="" />
-                {/* <video width="320" height="240" controls>
-                    <source src={cardInfo.videoUrl} type="video/mp4" />
-                    <track kind="captions" srcLang="kr" label="caption" default />
-                </video> */}
             </div>
             <p>{cardInfo.description}</p>
         </StyledDiv>

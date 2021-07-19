@@ -16,12 +16,17 @@ const HeaderDiv = styled.div`
     -webkit-box-align: center;
     align-items: center;
     line-height: 60px;
+    cursor: pointer;
 `
 
 const Header = (): JSX.Element => {
+    const handleLogoClick: React.MouseEventHandler = () => {
+        window.location.href = "/"
+    }
+
     return <NavDiv>
         <Container>
-            <HeaderDiv>POTG: Play of the Game</HeaderDiv>
+            <HeaderDiv onClick={handleLogoClick}>POTG: Play of the Game</HeaderDiv>
         </Container>
     </NavDiv>
 }

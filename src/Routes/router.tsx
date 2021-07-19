@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import CardDetailPage from './CardDetailPage';
+import CardInfoDetailPage from './CardInfoDetailPage';
 import MyCardsPage from './MyCardsPage';
 import PackInfoPage from './PackInfoPage';
 import PackOpeningPage from './PackOpeningPage';
@@ -11,7 +11,7 @@ const Router = (): JSX.Element => {
       <Switch>
         <Route exact path="/" component={PackInfoPage} />
         <Route path="/mycards" component={MyCardsPage} />
-        <Route path="/cards" component={CardDetailPage} />
+        <Route path="/cards" component={CardInfoDetailPage} />
         <Route path="/opening" component={PackOpeningPage} />
         {/* Not Found */}
         <Route component={() => <Redirect to="/" />} />
