@@ -1,17 +1,39 @@
 import { Grid } from '@material-ui/core';
+import styled from 'styled-components';
 
 import React, { useState } from 'react';
 import { Card, CardClass, GameType } from '../Models/Card';
 import Creater from './Creater';
-import P1Img from './p1.jpeg'
-import P2Img from './p2.jpeg'
-import P3Img from './p3.jpeg'
 
 interface CardProp {
     card: Card
     openCard: (i: number) => void
     packIndex: number
 }
+
+const SceneDiv = styled.div`
+    width: 100%;
+    min-height: 400px;
+    margin: 80px 0;
+    perspective: 800px;
+`
+
+const CubeDiv = styled.div`
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d() translateZ(-100px);
+    transition: transform 2s;
+`
+
+const CubeFaceImg = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+`
+
 
 const ClosedCard: React.FC<CardProp> = ({ card, openCard, packIndex }): JSX.Element => {
     const [active, setActive] = useState(false);
@@ -22,28 +44,28 @@ const ClosedCard: React.FC<CardProp> = ({ card, openCard, packIndex }): JSX.Elem
     }
 
     return <Grid item xs={4}>
-        <div className="scene">
-            <div role="button" tabIndex={0} className={active ? "cube show-right" : "cube"} onClick={handleCardClickEvent} onKeyDown={handleCardClickEvent}>
+        <SceneDiv>
+            <CubeDiv role="button" tabIndex={0} className={active ? "show-right" : ""} onClick={handleCardClickEvent} onKeyDown={handleCardClickEvent}>
                 <div className="cube__face cube__face--front">
-                    <img className="cube__side__img" src={P1Img} alt="" />
-                </div>
-                <div className="cube__face cube__face--back">
-                    <img className="cube__side__img" src={P2Img} alt="" />
-                </div>
-                <div className="cube__face cube__face--right">
-                    <img className="cube__side__img" src={P3Img} alt="" />
-                </div>
-                <div className="cube__face cube__face--left">
-                    <img className="cube__side__img" src={P1Img} alt="" />
+                    <CubeFaceImg src={card.cardInfo.images[0]} alt="" />
                 </div>
                 <div className="cube__face cube__face--top">
-                    <img className="cube__side__img" src={P2Img} alt="" />
+                    <CubeFaceImg src={card.cardInfo.images[1]} alt="" />
+                </div>
+                <div className="cube__face cube__face--right">
+                    <CubeFaceImg src={card.cardInfo.images[2]} alt="" />
+                </div>
+                <div className="cube__face cube__face--back">
+                    <CubeFaceImg src={card.cardInfo.images[0]} alt="" />
                 </div>
                 <div className="cube__face cube__face--bottom">
-                    <img className="cube__side__img" src={P3Img} alt="" />
+                    <CubeFaceImg src={card.cardInfo.images[1]} alt="" />
                 </div>
-            </div>
-        </div>
+                <div className="cube__face cube__face--left">
+                    <CubeFaceImg src={card.cardInfo.images[2]} alt="" />
+                </div>
+            </CubeDiv>
+        </SceneDiv>
         <div>
             No. {card.cardIndex}
         </div>

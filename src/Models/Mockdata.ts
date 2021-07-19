@@ -84,7 +84,11 @@ for (let i = 0; i < videoUrls.length; i += 1) {
     id: i,
     creater: creaters[i],
     name: cardNames[i],
-    images: ["https://picsum.photos/300/300", "https://picsum.photos/300/300", "https://picsum.photos/300/300"],
+    images: [
+      `https://picsum.photos/seed/" + ${i*37} + "/300`, 
+      `https://picsum.photos/seed/" + ${i*41} + "/300`,
+      `https://picsum.photos/seed/" + ${i*43} + "/300`,
+    ],
     description: descriptions[i],
     videoUrl: videoUrls[i],
     gameType: GameType.Overwatch,

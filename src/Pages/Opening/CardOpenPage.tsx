@@ -38,10 +38,13 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
   const classes = useStyles()
 
   const openCard = (i: number) => {
-    cardsOpened[i] = true
-    setCardsOpened(cardsOpened)
     setCurrentCard(i)
-    setTimeout(() => setOpen(true), 2500);
+
+    if (!cardsOpened[i]) {
+      cardsOpened[i] = true
+      setCardsOpened(cardsOpened)      
+      setTimeout(() => setOpen(true), 2500);
+    }
   }
 
   const handleClose = () => {
