@@ -2,8 +2,8 @@ import { Grid } from '@material-ui/core';
 
 import { samplePack } from '../Models/Mockdata';
 import PackIncludeView from '../Pages/Pack/PackIncludeView';
-import PackImageView from '../Pages/Pack/PackImageVIew';
-import PackDescriptionView from '../Pages/Pack/PackDescriptionVIew';
+import PackImageView from '../Pages/Pack/PackImageView';
+import PackDescriptionView from '../Pages/Pack/PackDescriptionView';
 
 const PackInfoPage: React.FC = (): JSX.Element => {
   return (

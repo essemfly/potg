@@ -1,4 +1,4 @@
-import { CardInfo, GameType, CardClass} from "../../Models/Card"
+import { CardInfo, GameType, CardClass} from "../../Models/Types"
 import Creater from "../../Components/Creater"
 
 interface CardInfoProps {

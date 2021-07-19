@@ -22,26 +22,6 @@ code {
 
 /* Animations for pack opening */
 
-.body_changer2 {
-    opacity: 0;
-    transition: opacity 2.5s linear;
-    position: static;
-}
-
-.body_changer {
-    animation-duration: 1.5s;
-    animation-name: transparenting;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
-.card_changer {
-    animation-duration: 1s;
-    animation-name: whitening;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-
 @keyframes transparenting {
     from {
         opacity: 1;
@@ -51,12 +31,9 @@ code {
     }
 }
 
-@keyframes whitening {
-    from {
-        background-color: black;
-    }
-    to {
-        background-color: white;
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
     }
 }
 

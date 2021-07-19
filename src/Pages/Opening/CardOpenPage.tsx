@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { Card, GameType, CardClass } from '../../Models/Card';
+import { Card, GameType, CardClass } from '../../Models/Types';
 import ClosedCard from '../../Components/ClosedCard';
 import Creater from '../../Components/Creater';
 

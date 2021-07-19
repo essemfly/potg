@@ -1,19 +1,12 @@
 import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
-
-import styled, { keyframes } from 'styled-components';
-import { Pack } from '../../Models/Card';
+import styled from 'styled-components';
+import { Pack } from '../../Models/Types';
 
 interface CardOpeningProps {
   handleCardOpen: React.MouseEventHandler;
   pack: Pack;
 }
-
-const moveGradient = keyframes`
-    50% {
-        background-position: 100% 50%;
-    }
-`;
 
 const PackImageDiv = styled.div<IProps>`
   ${({ active }) =>
@@ -57,7 +50,7 @@ const PackImageDiv = styled.div<IProps>`
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: 30px;
-    animation: ${moveGradient} 4s alternate infinite;
+    animation: moveGradient 4s alternate infinite;
   }
 `;
 
@@ -88,7 +81,6 @@ const PackOpenPage: React.FC<CardOpeningProps> = ({
   const [isActive, setActive] = useState(false);
   const handleCardOpenEvent = (event: React.MouseEvent) => {
     setActive(!isActive);
-    document.body.classList.toggle('body_changer3');
     setTimeout(() => handleCardOpen(event), 2000);
   };
   return (

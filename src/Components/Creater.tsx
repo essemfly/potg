@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Creater } from '../Models/Card';
+import { Creater } from '../Models/Types';
 import AvatarComponent from './Avatar';
 
 const CreaterDiv = styled.div`

@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { Pack } from '../../Models/Card';
+import { Pack } from '../../Models/Types';
 
 import Creater from '../../Components/Creater';
 
@@ -8,7 +8,7 @@ interface PackInfoProps {
   pack: Pack;
 }
 
-const PackDescriptionPart: React.FC<PackInfoProps> = ({
+const PackDescriptionView: React.FC<PackInfoProps> = ({
   pack,
 }): JSX.Element => {
   const history = useHistory();
@@ -42,4 +42,4 @@ const PackDescriptionPart: React.FC<PackInfoProps> = ({
   );
 };
 
-export default PackDescriptionPart;
+export default PackDescriptionView;

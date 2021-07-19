@@ -12,10 +12,10 @@ interface ImageUrlProps {
     imageUrl: string;
 }
 
-const PackImagePart: React.FC<ImageUrlProps> = ({ imageUrl }): JSX.Element => {
+const PackImageView: React.FC<ImageUrlProps> = ({ imageUrl }): JSX.Element => {
     return <div>
         <PackImage src={imageUrl} alt="" />
     </div>
 }
 
-export default PackImagePart
+export default PackImageView
