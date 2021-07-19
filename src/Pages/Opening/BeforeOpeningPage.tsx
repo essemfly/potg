@@ -1,5 +1,7 @@
 import { Button } from '@material-ui/core';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+
+import styled, { keyframes } from 'styled-components';
 import { Pack } from '../../Models/Card';
 
 interface CardOpeningProps {
@@ -7,23 +9,124 @@ interface CardOpeningProps {
   pack: Pack;
 }
 
-const PackImage = styled.img`
+const moveGradient = keyframes`
+    50% {
+        background-position: 100% 50%;
+    }
+`;
+
+const transparenting = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+}
+`;
+
+const whitening = keyframes`
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: white;
+}
+`;
+
+const PackImageDiv = styled.div<IProps>`
+  ${({ active }) =>
+    active &&
+    `
+    animation-duration: 1s;
+    animation-name: transparenting;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    `}
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 60%;
+  height: 60%;
+  color: white;
+  background: #222;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  &::after {
+    position: absolute;
+    content: '';
+    top: -3px;
+    left: -3px;
+    z-index: -1;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 30px;
+    animation: ${moveGradient} 4s alternate infinite;
+  }
+`;
+
+const PackImage = styled.img`
+  width: 100%;
   height: auto;
+  padding: 10px;
   display: block;
 `;
+
+interface IProps {
+  active: boolean;
+}
+
+const BuyButtonDiv = styled.div`
+  margin: 30px auto;
+  text-align: center;
+`;
+
+const BuyButton = styled(Button)({
+  margin: '0 auto',
+});
 
 const BeforeOpeningPage: React.FC<CardOpeningProps> = ({
   handleCardOpen,
   pack,
 }): JSX.Element => {
+  const [isActive, setActive] = useState(false);
+  const handleCardOpenEvent = (event: React.MouseEvent) => {
+    setActive(!isActive);
+    console.log('HOIT');
+    document.body.classList.toggle('body_changer3');
+    console.log('2');
+    setTimeout(() => handleCardOpen(event), 2000);
+  };
   return (
-    <div>
-      <h3>{pack.name}</h3>
-      <PackImage src={pack.imageUrl} />
-      <Button variant="outlined" color="primary" onClick={handleCardOpen}>
-        팩 열어보기
-      </Button>
+    <div style={{ zIndex: 1 }}>
+      <h1 style={{ textAlign: 'center' }}>{pack.name}</h1>
+      <br />
+      <PackImageDiv active={isActive}>
+        <PackImage src={pack.imageUrl} />
+      </PackImageDiv>
+      <BuyButtonDiv>
+        <BuyButton
+          variant="outlined"
+          color="primary"
+          onClick={handleCardOpenEvent}
+        >
+          팩 열어보기
+        </BuyButton>
+      </BuyButtonDiv>
     </div>
   );
 };
