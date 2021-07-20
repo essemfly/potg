@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PackOpenPage from './PackOpenView';
 import CardOpenPage from './CardOpenView';
 import { RootState } from '../../../app/store';
-import { openPack } from '../../../redux/cardsSlice'
+import { openPack, openCard } from '../../../redux/cardsSlice'
 
 const PakOpeningPage = (): JSX.Element => {
   const packs = useSelector((state: RootState) => state.pack)
@@ -15,10 +15,13 @@ const PakOpeningPage = (): JSX.Element => {
       {cards.status === "CLOSED" ? (
         <PackOpenPage
           pack={packs[0]}
-          handleCardOpen={() => dispatch(openPack())}
+          handlePackOpen={() => dispatch(openPack())}
         />
       ) : (
-        <CardOpenPage cards={cards.cards} />
+        <CardOpenPage
+          cardsInPack={cards}
+          handleCardOpen={(i) => dispatch(openCard(i))}
+        />
       )}
     </div>
   );

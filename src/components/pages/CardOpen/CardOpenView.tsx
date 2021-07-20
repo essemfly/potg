@@ -4,13 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { Card, GameType, CardClass } from '../../Card/Card';
+import { GameType, CardClass } from '../../Card/Card';
+import { CardsState } from '../../../redux/cardsSlice';
 import ClosedCard from '../../Card/ClosedCard';
 import CreaterAvatar from '../../Creater/CreaterAvatar';
 
 
-interface CardsProps {
-  cards: Card[]
+interface CardsInPackProps {
+  cardsInPack: CardsState
+  handleCardOpen: (idx: number) => void
 }
 
 function getModalStyle() {
@@ -41,21 +43,18 @@ const GoButton = styled(Button)({
   margin: '0 auto',
 });
 
-const CardOpenView: React.FC<CardsProps> = ({ cards }): JSX.Element => {
+const CardOpenView: React.FC<CardsInPackProps> = ({ cardsInPack, handleCardOpen }): JSX.Element => {
+  const classes = useStyles()
   const history = useHistory()
-  const [cardsOpened, setCardsOpened] = useState(new Array(cards.length).fill(false));
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
 
-  const classes = useStyles()
-
   const openCard = (i: number) => {
     setCurrentCard(i)
 
-    if (!cardsOpened[i]) {
-      cardsOpened[i] = true
-      setCardsOpened(cardsOpened)
+    if (!cardsInPack.cardsOpenStatus[i]) {
+      handleCardOpen(i)
       setTimeout(() => setOpen(true), 2500);
     }
   }
@@ -70,22 +69,22 @@ const CardOpenView: React.FC<CardsProps> = ({ cards }): JSX.Element => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">{cards[currentCard].cardInfo.name}</h2>
+      <h2 id="simple-modal-title">{cardsInPack.cards[currentCard].cardInfo.name}</h2>
       <Grid container justifyContent="center" spacing={5}>
         <Grid item xs={6}>
           <video width="320" height="240" controls autoPlay>
-            <source src={cards[currentCard].cardInfo.videoUrl} type="video/mp4" />
+            <source src={cardsInPack.cards[currentCard].cardInfo.videoUrl} type="video/mp4" />
             <track kind="captions" srcLang="kr" label="caption" default />
           </video></Grid>
         <Grid item xs={6}>
           <p>
-            Index: {cards[currentCard].cardIndex}
+            Index: {cardsInPack.cards[currentCard].cardIndex}
           </p>
-          <p>Game: {GameType[cards[currentCard].cardInfo.gameType]}</p>
-          <p>Type: {CardClass[cards[currentCard].cardInfo.cardClass]}</p>
-          <CreaterAvatar creater={cards[currentCard].cardInfo.creater} />
+          <p>Game: {GameType[cardsInPack.cards[currentCard].cardInfo.gameType]}</p>
+          <p>Type: {CardClass[cardsInPack.cards[currentCard].cardInfo.cardClass]}</p>
+          <CreaterAvatar creater={cardsInPack.cards[currentCard].cardInfo.creater} />
           <p id="simple-modal-description">
-            {cards[currentCard].cardInfo.description}
+            {cardsInPack.cards[currentCard].cardInfo.description}
           </p>
         </Grid>
       </Grid>
@@ -107,7 +106,7 @@ const CardOpenView: React.FC<CardsProps> = ({ cards }): JSX.Element => {
       >
         {body}
       </Modal>
-      {cards.map(function createCard(card, i) {
+      {cardsInPack.cards.map(function createCard(card, i) {
         return <ClosedCard key={card.id} card={card} packIndex={i} openCard={openCard} />
       })}
       <GotoMypageButtonDiv>

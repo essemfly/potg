@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Pack } from '../../Pack/Pack';
 
 interface CardOpeningProps {
-  handleCardOpen: React.MouseEventHandler;
+  handlePackOpen: React.MouseEventHandler;
   pack: Pack;
 }
 
@@ -75,13 +75,13 @@ const BuyButton = styled(Button)({
 });
 
 const PackOpenView: React.FC<CardOpeningProps> = ({
-  handleCardOpen,
+  handlePackOpen,
   pack,
 }): JSX.Element => {
   const [isActive, setActive] = useState(false);
   const handleCardOpenEvent = (event: React.MouseEvent) => {
     setActive(!isActive);
-    setTimeout(() => handleCardOpen(event), 2000);
+    setTimeout(() => handlePackOpen(event), 2000);
   };
   return (
     <div style={{ zIndex: 1 }}>
