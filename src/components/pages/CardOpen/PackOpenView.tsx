@@ -1,7 +1,7 @@
-import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Pack } from '../../Pack/Pack';
+import { CenterButton } from '../../../common/CenterButton';
 
 interface CardOpeningProps {
   handlePackOpen: React.MouseEventHandler;
@@ -70,10 +70,6 @@ const BuyButtonDiv = styled.div`
   text-align: center;
 `;
 
-const BuyButton = styled(Button)({
-  margin: '0 auto',
-});
-
 const PackOpenView: React.FC<CardOpeningProps> = ({
   handlePackOpen,
   pack,
@@ -91,13 +87,13 @@ const PackOpenView: React.FC<CardOpeningProps> = ({
         <PackImage src={pack.imageUrl} />
       </PackImageDiv>
       <BuyButtonDiv>
-        <BuyButton
-          variant="outlined"
+        <CenterButton
+          variant="contained"
           color="primary"
           onClick={handleCardOpenEvent}
         >
-          팩 열어보기
-        </BuyButton>
+          OPEN PACKS
+        </CenterButton>
       </BuyButtonDiv>
     </div>
   );

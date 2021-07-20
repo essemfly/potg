@@ -8,6 +8,7 @@ import { GameType, CardClass } from '../../Card/Card';
 import { CardsState } from '../../../redux/cardsSlice';
 import ClosedCard from '../../Card/ClosedCard';
 import CreaterAvatar from '../../Creater/CreaterAvatar';
+import { CenterButton } from '../../../common/CenterButton';
 
 
 interface CardsInPackProps {
@@ -38,10 +39,6 @@ const GotoMypageButtonDiv = styled.div`
   margin: 30px auto;
   text-align: center;
 `;
-
-const GoButton = styled(Button)({
-  margin: '0 auto',
-});
 
 const CardOpenView: React.FC<CardsInPackProps> = ({ cardsInPack, handleCardOpen }): JSX.Element => {
   const classes = useStyles()
@@ -92,33 +89,36 @@ const CardOpenView: React.FC<CardsInPackProps> = ({ cardsInPack, handleCardOpen 
   );
 
   return (
-    <Grid
-      container
-      direction="row"
-      justifyContent="center"
-      alignItems="flex-start"
-    >
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
+    <div>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
       >
-        {body}
-      </Modal>
-      {cardsInPack.cards.map(function createCard(card, i) {
-        return <ClosedCard key={card.id} card={card} packIndex={i} openCard={openCard} />
-      })}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          {body}
+        </Modal>
+        {cardsInPack.cards.map(function createCard(card, i) {
+          return <ClosedCard key={card.id} card={card} packIndex={i} openCard={openCard} />
+        })}
+
+      </Grid>
       <GotoMypageButtonDiv>
-        <GoButton
-          variant="outlined"
+        <CenterButton
+          variant="contained"
           color="primary"
           onClick={handleGoMyPage}
         >
-          내 카드 보러가기
-        </GoButton>
+          GO MYPAGE
+        </CenterButton>
       </GotoMypageButtonDiv>
-    </Grid>
+    </div>
   );
 };
 

@@ -12,6 +12,8 @@ const NavDiv = styled.div`
 `
 
 const HeaderDiv = styled.div`
+    font-family: overwatch;
+    font-size: 2rem;
     display: grid;
     -webkit-box-align: center;
     align-items: center;
@@ -26,7 +28,9 @@ const Header = (): JSX.Element => {
 
     return <NavDiv>
         <Container>
-            <HeaderDiv onClick={handleLogoClick}>POTG: Play of the Game</HeaderDiv>
+            <HeaderDiv onClick={handleLogoClick}>
+                POTG: Play of the Game
+            </HeaderDiv>
         </Container>
     </NavDiv>
 }

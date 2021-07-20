@@ -1,7 +1,8 @@
-import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import { Width100Button } from '../../../common/Width100Button';
 import { Pack } from '../../Pack/Pack';
 import CreaterAvatar from '../../Creater/CreaterAvatar';
+import { PriceSpan } from '../../../common/PriceSpan';
 
 interface PackInfoProps {
   pack: Pack;
@@ -18,14 +19,14 @@ const PackDescriptionView: React.FC<PackInfoProps> = ({
   return (
     <div>
       <div>
-        <h2>{pack.name}</h2>
-        가격: {pack.price}
+        <h1>{pack.name}</h1>
+        <PriceSpan> ₩ {pack.price} </PriceSpan>
       </div>
       <br />
       <div>
-        <Button variant="outlined" color="primary" onClick={handleBuyClick}>
-          구매하기
-        </Button>
+        <Width100Button variant="contained" color="primary" onClick={handleBuyClick}>
+          JOIN DROP
+        </Width100Button>
       </div>
       <br />
       <pre>{pack.description}</pre>

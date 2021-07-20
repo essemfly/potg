@@ -26,7 +26,7 @@ const PackInfoPage: React.FC = (): JSX.Element => {
           <PackDescriptionView pack={samplePack} />
         </Grid>
       </Grid>
-      <h2>포함된 카드들</h2>
+      <h2>Cards Included</h2>
       <PackIncludeView cardInfos={samplePack.cardInfos} />
     </div>
   );
