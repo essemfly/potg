@@ -1,7 +1,6 @@
 import { CardInfo } from "../Card/Card"
 import { Creater } from "../Creater/Creater"
 
-
 export type Pack = {
     id: number;
     name: string;

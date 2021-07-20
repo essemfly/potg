@@ -22,6 +22,14 @@ export type Card = {
     cardStatus: CardStatus
 }
 
+export type CardDistribution = {
+    total: number
+    active: number
+    onsale: number
+    burned: number
+    preserved: number
+}
+
 export enum GameType {
     Overwatch = 1,
     Starcraft1
@@ -39,12 +47,3 @@ export enum CardStatus {
     burned,
     preserved,
 }
-
-export type CardDistribution = {
-    total: number
-    active: number
-    onsale: number
-    burned: number
-    preserved: number
-}
-

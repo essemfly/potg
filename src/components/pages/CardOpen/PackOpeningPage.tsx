@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { samplePack, sampleCards } from '../../../fixtures/Mockdata';
 import PackOpenPage from './PackOpenView';
 import CardOpenPage from './CardOpenView';
+import { RootState } from '../../../app/store';
+import { openPack } from '../../../redux/cardsSlice'
 
 const PakOpeningPage = (): JSX.Element => {
-  const [isOpenCard, setIsOpenCard] = useState(false);
-
-  const handleCardOpen: React.MouseEventHandler = () => {
-    setIsOpenCard(true);
-  };
+  const packs = useSelector((state: RootState) => state.pack)
+  const cards = useSelector((state: RootState) => state.cards)
+  const dispatch = useDispatch()
 
   return (
     <div>
-      {isOpenCard === false ? (
+      {cards.status === "CLOSED" ? (
         <PackOpenPage
-          pack={samplePack}
-          handleCardOpen={handleCardOpen}
+          pack={packs[0]}
+          handleCardOpen={() => dispatch(openPack())}
         />
       ) : (
-        <CardOpenPage cards={sampleCards}/>
+        <CardOpenPage cards={cards.cards} />
       )}
     </div>
   );

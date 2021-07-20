@@ -1,11 +1,16 @@
 import { Grid } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
-import { samplePack } from '../../../fixtures/Mockdata';
+import { RootState } from '../../../app/store';
 import PackIncludeView from './PackIncludeView';
 import PackImageView from './PackImageView';
 import PackDescriptionView from './PackDescriptionView';
 
+
 const PackInfoPage: React.FC = (): JSX.Element => {
+  const packs = useSelector((state: RootState) => state.pack)
+  const samplePack = packs[0]
+
   return (
     <div>
       <Grid
@@ -22,7 +27,7 @@ const PackInfoPage: React.FC = (): JSX.Element => {
         </Grid>
       </Grid>
       <h2>포함된 카드들</h2>
-        <PackIncludeView cardInfos={samplePack.cardInfos} />
+      <PackIncludeView cardInfos={samplePack.cardInfos} />
     </div>
   );
 };
