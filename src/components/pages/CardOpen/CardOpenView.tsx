@@ -4,9 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { Card, GameType, CardClass } from '../../Models/Types';
-import ClosedCard from '../../Components/ClosedCard';
-import Creater from '../../Components/Creater';
+import { Card, GameType, CardClass } from '../../../Models/Types';
+import ClosedCard from '../../Card/ClosedCard';
+import Creater from '../../Creater/Creater';
 
 
 interface CardsProps {
@@ -41,7 +41,7 @@ const GoButton = styled(Button)({
   margin: '0 auto',
 });
 
-const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
+const CardOpenView: React.FC<CardsProps> = ({ cards }): JSX.Element => {
   const history = useHistory()
   const [cardsOpened, setCardsOpened] = useState(new Array(cards.length).fill(false));
   const [modalStyle] = useState(getModalStyle);
@@ -123,4 +123,4 @@ const CardOpenPage: React.FC<CardsProps> = ({ cards }): JSX.Element => {
   );
 };
 
-export default CardOpenPage;
+export default CardOpenView;

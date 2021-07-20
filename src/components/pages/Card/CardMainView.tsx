@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CardInfo } from "../../Models/Types"
+import { CardInfo } from "../../../Models/Types"
 
 
 interface CardInfoProps {

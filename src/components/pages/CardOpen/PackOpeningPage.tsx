@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { samplePack, sampleCards } from '../Models/Mockdata';
-import PackOpenPage from '../Pages/Opening/PackOpenPage';
-import CardOpenPage from '../Pages/Opening/CardOpenPage';
+import { samplePack, sampleCards } from '../../../Models/Mockdata';
+import PackOpenPage from './PackOpenView';
+import CardOpenPage from './CardOpenView';
 
 const PakOpeningPage = (): JSX.Element => {
   const [isOpenCard, setIsOpenCard] = useState(false);

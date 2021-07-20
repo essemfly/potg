@@ -1,5 +1,5 @@
-import { CardInfo, GameType, CardClass} from "../../Models/Types"
-import Creater from "../../Components/Creater"
+import { CardInfo, GameType, CardClass} from "../../../Models/Types"
+import Creater from "../../Creater/Creater"
 
 interface CardInfoProps {
     cardInfo: CardInfo

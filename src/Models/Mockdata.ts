@@ -1,5 +1,5 @@
 import { Creater, Pack, Card, CardInfo, CardDistribution, CardClass, GameType, CardStatus, } from "./Types"
-import pack1Img from "../Components/pack1.png"
+import pack1Img from "./pack1.png"
 
 const creater1: Creater = {
   id: 552,

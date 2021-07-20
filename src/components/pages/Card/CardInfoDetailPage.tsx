@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
-import { sampleCardInfos } from '../Models/Mockdata';
-import CardMainView from '../Pages/Card/CardMainView';
-import CardDetailView from '../Pages/Card/CardDetailView';
+import { sampleCardInfos } from '../../../Models/Mockdata';
+import CardMainView from './CardMainView';
+import CardDetailView from './CardDetailView';
 
 const CardInfoDetailPage = (): JSX.Element => {
   const cardInfo = sampleCardInfos[0]

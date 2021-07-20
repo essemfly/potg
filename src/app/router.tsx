@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import CardInfoDetailPage from './CardInfoDetailPage';
-import MyCardsPage from './MyCardsPage';
-import PackInfoPage from './PackInfoPage';
-import PackOpeningPage from './PackOpeningPage';
+import CardInfoDetailPage from '../components/pages/Card/CardInfoDetailPage';
+import MyCardsPage from '../components/pages/Mypage/MyCardsPage';
+import PackInfoPage from '../components/pages/Pack/PackInfoPage';
+import PackOpeningPage from '../components/pages/CardOpen/PackOpeningPage';
 
 const Router = (): JSX.Element => {
   return (

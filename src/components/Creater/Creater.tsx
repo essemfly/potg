@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Creater } from '../Models/Types';
-import AvatarComponent from './Avatar';
+import { Creater } from '../../Models/Types';
+import AvatarComponent from '../../common/Avatar';
 
 const CreaterDiv = styled.div`
     display: inline-block;

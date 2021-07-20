@@ -1,8 +1,8 @@
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { Pack } from '../../Models/Types';
+import { Pack } from '../../../Models/Types';
 
-import Creater from '../../Components/Creater';
+import Creater from '../../Creater/Creater';
 
 interface PackInfoProps {
   pack: Pack;

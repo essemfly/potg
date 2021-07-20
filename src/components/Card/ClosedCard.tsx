@@ -2,8 +2,8 @@ import { Grid } from '@material-ui/core';
 import styled from 'styled-components';
 
 import React, { useState } from 'react';
-import { Card, CardClass, GameType } from '../Models/Types';
-import Creater from './Creater';
+import { Card, CardClass, GameType } from '../../Models/Types';
+import Creater from '../Creater/Creater';
 
 interface CardProp {
     card: Card

@@ -1,7 +1,7 @@
 import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Pack } from '../../Models/Types';
+import { Pack } from '../../../Models/Types';
 
 interface CardOpeningProps {
   handleCardOpen: React.MouseEventHandler;
@@ -74,7 +74,7 @@ const BuyButton = styled(Button)({
   margin: '0 auto',
 });
 
-const PackOpenPage: React.FC<CardOpeningProps> = ({
+const PackOpenView: React.FC<CardOpeningProps> = ({
   handleCardOpen,
   pack,
 }): JSX.Element => {
@@ -103,4 +103,4 @@ const PackOpenPage: React.FC<CardOpeningProps> = ({
   );
 };
 
-export default PackOpenPage;
+export default PackOpenView;
