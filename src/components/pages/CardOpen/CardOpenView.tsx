@@ -4,9 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { Card, GameType, CardClass } from '../../../Models/Types';
+import { Card, GameType, CardClass } from '../../Card/Card';
 import ClosedCard from '../../Card/ClosedCard';
-import Creater from '../../Creater/Creater';
+import CreaterAvatar from '../../Creater/CreaterAvatar';
 
 
 interface CardsProps {
@@ -83,7 +83,7 @@ const CardOpenView: React.FC<CardsProps> = ({ cards }): JSX.Element => {
           </p>
           <p>Game: {GameType[cards[currentCard].cardInfo.gameType]}</p>
           <p>Type: {CardClass[cards[currentCard].cardInfo.cardClass]}</p>
-          <Creater creater={cards[currentCard].cardInfo.creater} />
+          <CreaterAvatar creater={cards[currentCard].cardInfo.creater} />
           <p id="simple-modal-description">
             {cards[currentCard].cardInfo.description}
           </p>

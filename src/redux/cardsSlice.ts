@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Card } from "../Models/Types";
-import { sampleCards } from "../Models/Mockdata";
+import { Card } from "../components/Card/Card";
+import { sampleCards } from "../fixtures/Mockdata";
 
 export interface CardsState {
     cards: Card[]

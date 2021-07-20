@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
-import { CardInfo, CardClass, GameType } from "../../Models/Types"
+import { CardInfo, CardClass, GameType } from "./Card"
 
 
 interface CardProps {

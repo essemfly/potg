@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core';
-import { sampleCardInfos } from '../../../Models/Mockdata';
+import { sampleCardInfos } from '../../../fixtures/Mockdata';
 import CardMainView from './CardMainView';
 import CardDetailView from './CardDetailView';
 

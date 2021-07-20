@@ -1,6 +1,6 @@
 import { Grid } from '@material-ui/core';
 
-import { samplePack } from '../../../Models/Mockdata';
+import { samplePack } from '../../../fixtures/Mockdata';
 import PackIncludeView from './PackIncludeView';
 import PackImageView from './PackImageView';
 import PackDescriptionView from './PackDescriptionView';

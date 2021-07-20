@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Pack } from "../Models/Types";
-import { samplePack } from "../Models/Mockdata";
+import { Pack } from "../components/Pack/Pack";
+import { samplePack } from "../fixtures/Mockdata";
 
 const initialState: Pack[] = [
     samplePack

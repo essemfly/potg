@@ -1,7 +1,7 @@
 import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Pack } from '../../../Models/Types';
+import { Pack } from '../../Pack/Pack';
 
 interface CardOpeningProps {
   handleCardOpen: React.MouseEventHandler;

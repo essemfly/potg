@@ -2,8 +2,8 @@ import { Grid } from '@material-ui/core';
 import styled from 'styled-components';
 
 import React, { useState } from 'react';
-import { Card, CardClass, GameType } from '../../Models/Types';
-import Creater from '../Creater/Creater';
+import { Card, CardClass, GameType } from './Card';
+import CreaterAvatar from '../Creater/CreaterAvatar';
 
 interface CardProp {
     card: Card
@@ -71,7 +71,7 @@ const ClosedCard: React.FC<CardProp> = ({ card, openCard, packIndex }): JSX.Elem
         </div>
         <div>
             <p>Name: {card.cardInfo.name}</p>
-            <Creater creater={card.cardInfo.creater} />
+            <CreaterAvatar creater={card.cardInfo.creater} />
             <p>Description: {card.cardInfo.description} </p>
             <p>Game: {GameType[card.cardInfo.gameType]}</p>
             <p>Type: {CardClass[card.cardInfo.cardClass]}</p>

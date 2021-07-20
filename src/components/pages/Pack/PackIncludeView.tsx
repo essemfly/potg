@@ -1,6 +1,6 @@
 import { Grid } from '@material-ui/core';
 import BriefCard from '../../Card/BriefCard';
-import { CardInfo } from "../../../Models/Types"
+import { CardInfo } from "../../Card/Card";
 
 interface PackInfoProps {
     cardInfos: CardInfo[];

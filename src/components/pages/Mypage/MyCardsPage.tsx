@@ -1,6 +1,6 @@
 import { Grid } from '@material-ui/core';
 import BriefCard from '../../Card/BriefCard';
-import { sampleCards } from '../../../Models/Mockdata';
+import { sampleCards } from '../../../fixtures/Mockdata';
 
 const MyCardsPage = (): JSX.Element => {
   return (

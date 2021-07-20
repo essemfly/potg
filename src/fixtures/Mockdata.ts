@@ -1,4 +1,6 @@
-import { Creater, Pack, Card, CardInfo, CardDistribution, CardClass, GameType, CardStatus, } from "./Types"
+import { Card, CardInfo, CardDistribution, CardClass, GameType, CardStatus } from "../components/Card/Card";
+import { Pack } from "../components/Pack/Pack";
+import { Creater } from "../components/Creater/Creater"
 import pack1Img from "./pack1.png"
 
 const creater1: Creater = {
@@ -85,9 +87,9 @@ for (let i = 0; i < videoUrls.length; i += 1) {
     creater: creaters[i],
     name: cardNames[i],
     images: [
-      `https://picsum.photos/seed/" + ${(i+1)*37} + "/300`, 
-      `https://picsum.photos/seed/" + ${(i+1)*41} + "/300`,
-      `https://picsum.photos/seed/" + ${(i+1)*43} + "/300`,
+      `https://picsum.photos/seed/" + ${(i + 1) * 37} + "/300`,
+      `https://picsum.photos/seed/" + ${(i + 1) * 41} + "/300`,
+      `https://picsum.photos/seed/" + ${(i + 1) * 43} + "/300`,
     ],
     description: descriptions[i],
     videoUrl: videoUrls[i],
@@ -104,7 +106,7 @@ export const sampleCards: Card[] = []
 
 for (let i = 0; i < 3; i += 1) {
   const card: Card = {
-    id: 37 * (i+1),
+    id: 37 * (i + 1),
     cardIndex: i,
     cardInfo: sampleCardInfos[i * 37 % 12],
     owner: null,

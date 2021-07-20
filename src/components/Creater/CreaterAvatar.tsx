@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { Creater } from '../../Models/Types';
+import { Creater } from './Creater';
 import AvatarComponent from '../../common/Avatar';
+
 
 const CreaterDiv = styled.div`
     display: inline-block;
@@ -11,11 +12,11 @@ interface CreaterProps {
     creater: Creater;
 }
 
-const CreateComponent: React.FC<CreaterProps> = ({ creater }) => {
+const CreaterAvatar: React.FC<CreaterProps> = ({ creater }) => {
     return <CreaterDiv key={creater.id}>
         <p>{creater.name}</p>
         <AvatarComponent avatarUrl={creater.avatarUrl} />
     </CreaterDiv>
 }
 
-export default CreateComponent
+export default CreaterAvatar

@@ -1,8 +1,7 @@
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { Pack } from '../../../Models/Types';
-
-import Creater from '../../Creater/Creater';
+import { Pack } from '../../Pack/Pack';
+import CreaterAvatar from '../../Creater/CreaterAvatar';
 
 interface PackInfoProps {
   pack: Pack;
@@ -34,7 +33,7 @@ const PackDescriptionView: React.FC<PackInfoProps> = ({
       <div>
         {pack.creaters.map(function avatarCreator(creater) {
           return (
-            <Creater key={creater.id} creater={creater} />
+            <CreaterAvatar key={creater.id} creater={creater} />
           );
         })}
       </div>

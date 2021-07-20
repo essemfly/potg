@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { samplePack, sampleCards } from '../../../Models/Mockdata';
+import { samplePack, sampleCards } from '../../../fixtures/Mockdata';
 import PackOpenPage from './PackOpenView';
 import CardOpenPage from './CardOpenView';
 

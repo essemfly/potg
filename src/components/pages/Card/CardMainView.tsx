@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CardInfo } from "../../../Models/Types"
+import { CardInfo } from "../../Card/Card"
 
 
 interface CardInfoProps {
@@ -11,8 +11,6 @@ const CardImg = styled.img`
     height: auto;
     margin: 0 15px;
 `
-
-
 
 const CardMainView: React.FC<CardInfoProps> = ({ cardInfo }): JSX.Element => {
     return <div>
