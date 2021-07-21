@@ -31,12 +31,14 @@ h3 {
   font-family: overwatch, koverwatch;
   font-size: 1.75rem;
   letter-spacing: 0.1rem;
+  margin: 0.5rem 0;
 }
 
 h4 {
   font-family: overwatch, koverwatch, sans-serif;
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
+  margin: 0.5rem 0;
 }
 
 pre {

@@ -36,6 +36,7 @@ const PackDescriptionView: React.FC<PackInfoProps> = ({
       <br />
       <AvatarComponent avatarUrl={pack.creaters[0].logoUrl} />
       <pre>{pack.description}</pre>
+      <br />
       <h3>Players</h3>
       <div>
         {pack.players.map(function avatarCreator(player) {
