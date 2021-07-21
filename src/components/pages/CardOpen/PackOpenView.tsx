@@ -55,9 +55,11 @@ const PackImageDiv = styled.div<IProps>`
 `;
 
 const PackImage = styled.img`
-  width: 100%;
+  width: 60%;
+  height: 60%;
+  border: 2px solid #e8ecfc;
   height: auto;
-  padding: 10px;
+  padding: 30px;
   display: block;
 `;
 
@@ -81,7 +83,9 @@ const PackOpenView: React.FC<CardOpeningProps> = ({
   };
   return (
     <div style={{ zIndex: 1 }}>
-      <h1 style={{ textAlign: 'center', margin: 0, padding: "30px 0", }}>{pack.name}</h1>
+      <h1 style={{ textAlign: 'center', margin: 0, padding: '30px 0' }}>
+        {pack.name}
+      </h1>
       <br />
       <PackImageDiv active={isActive}>
         <PackImage src={pack.imageUrl} />
