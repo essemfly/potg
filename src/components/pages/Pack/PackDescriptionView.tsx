@@ -1,8 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { Width100Button } from '../../../common/Width100Button';
 import { Pack } from '../../Pack/Pack';
-import CreaterAvatar from '../../Creater/CreaterAvatar';
+import PlayerAvatar from '../../Creater/PlayerAvatar';
 import { PriceSpan } from '../../../common/PriceSpan';
+import AvatarComponent from '../../../common/Avatar';
 
 interface PackInfoProps {
   pack: Pack;
@@ -20,22 +21,25 @@ const PackDescriptionView: React.FC<PackInfoProps> = ({
     <div>
       <div>
         <h1>{pack.name}</h1>
-        <PriceSpan> ₩ {pack.price} </PriceSpan>
+        <PriceSpan style={{ display: 'block' }}> ₩ {pack.price} </PriceSpan>
       </div>
       <br />
       <div>
-        <Width100Button variant="contained" color="primary" onClick={handleBuyClick}>
+        <Width100Button
+          variant="contained"
+          color="primary"
+          onClick={handleBuyClick}
+        >
           JOIN DROP
         </Width100Button>
       </div>
       <br />
+      <AvatarComponent avatarUrl={pack.creaters[0].logoUrl} />
       <pre>{pack.description}</pre>
-      <h3>Creaters</h3>
+      <h3>Players</h3>
       <div>
-        {pack.creaters.map(function avatarCreator(creater) {
-          return (
-            <CreaterAvatar key={creater.id} creater={creater} />
-          );
+        {pack.players.map(function avatarCreator(player) {
+          return <PlayerAvatar key={player.id} player={player} />;
         })}
       </div>
     </div>

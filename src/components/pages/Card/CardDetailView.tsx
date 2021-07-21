@@ -1,19 +1,19 @@
-import { CardInfo, GameType, CardClass } from "../../Card/Card"
-import CreaterAvatar from "../../Creater/CreaterAvatar"
+import { CardInfo, GameType, CardClass } from '../../Card/Card';
+import PlayerAvatar from '../../Creater/PlayerAvatar';
 
 interface CardInfoProps {
-    cardInfo: CardInfo
+  cardInfo: CardInfo;
 }
 
 const CardDetailView: React.FC<CardInfoProps> = ({ cardInfo }): JSX.Element => {
-    return <div>
-        <p>Game: {GameType[cardInfo.gameType]}</p>
-        <p>Type: {CardClass[cardInfo.cardClass]}</p>
-        <CreaterAvatar creater={cardInfo.creater} />
-        <p id="simple-modal-description">
-            {cardInfo.description}
-        </p>
+  return (
+    <div>
+      <p>Game: {GameType[cardInfo.gameType]}</p>
+      <p>Type: {CardClass[cardInfo.cardClass]}</p>
+      <PlayerAvatar player={cardInfo.player} />
+      <p id="simple-modal-description">{cardInfo.description}</p>
     </div>
-}
+  );
+};
 
-export default CardDetailView
+export default CardDetailView;
