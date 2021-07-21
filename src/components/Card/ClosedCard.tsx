@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core';
 import styled from 'styled-components';
 
 import React, { useState } from 'react';
-import { Card, CardClass, GameType } from './Card';
+import { Card } from './Card';
 import CardBackDesign from './cardBackDesign.jpeg';
 import PlayerAvatarReverse from '../Creater/PlayerAvatarReverse';
 

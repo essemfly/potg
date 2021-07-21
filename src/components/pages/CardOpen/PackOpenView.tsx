@@ -8,11 +8,16 @@ interface CardOpeningProps {
   pack: Pack;
 }
 
+interface IProps {
+  active: boolean;
+  imageUrl: string;
+}
+
 const PackImageDiv = styled.div<IProps>`
   ${({ active }) =>
     active &&
     `
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-name: transparenting;
     animation-direction: alternate;
     animation-iteration-count: 2;
@@ -21,13 +26,16 @@ const PackImageDiv = styled.div<IProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 60%;
+  background: url(${({ imageUrl }) => imageUrl});
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  width: 500px;
   color: white;
-  background: #222;
   margin-right: auto;
   margin-left: auto;
   border-radius: 30px;
+
   &::after {
     position: absolute;
     content: '';
@@ -36,36 +44,12 @@ const PackImageDiv = styled.div<IProps>`
     z-index: -1;
     width: calc(100% + 6px);
     height: calc(100% + 6px);
-    background: linear-gradient(
-      60deg,
-      hsl(224, 85%, 66%),
-      hsl(269, 85%, 66%),
-      hsl(314, 85%, 66%),
-      hsl(359, 85%, 66%),
-      hsl(44, 85%, 66%),
-      hsl(89, 85%, 66%),
-      hsl(134, 85%, 66%),
-      hsl(179, 85%, 66%)
-    );
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: 30px;
     animation: moveGradient 4s alternate infinite;
   }
 `;
-
-const PackImage = styled.img`
-  width: 60%;
-  height: 60%;
-  border: 2px solid #e8ecfc;
-  height: auto;
-  padding: 30px;
-  display: block;
-`;
-
-interface IProps {
-  active: boolean;
-}
 
 const BuyButtonDiv = styled.div`
   margin: 30px auto;
@@ -79,26 +63,29 @@ const PackOpenView: React.FC<CardOpeningProps> = ({
   const [isActive, setActive] = useState(false);
   const handleCardOpenEvent = (event: React.MouseEvent) => {
     setActive(!isActive);
+    document.body.classList.toggle('body_changer');
     setTimeout(() => handlePackOpen(event), 2000);
   };
   return (
-    <div style={{ zIndex: 1 }}>
+    <div style={{ zIndex: 1, marginTop: '5vh' }}>
       <h1 style={{ textAlign: 'center', margin: 0, padding: '30px 0' }}>
         {pack.name}
       </h1>
       <br />
-      <PackImageDiv active={isActive}>
-        <PackImage src={pack.imageUrl} />
-      </PackImageDiv>
-      <BuyButtonDiv>
-        <CenterButton
-          variant="contained"
-          color="primary"
-          onClick={handleCardOpenEvent}
-        >
-          OPEN PACKS
-        </CenterButton>
-      </BuyButtonDiv>
+      <PackImageDiv active={isActive} imageUrl={pack.imageUrl} />
+      {isActive ? (
+        ''
+      ) : (
+        <BuyButtonDiv>
+          <CenterButton
+            variant="contained"
+            color="primary"
+            onClick={handleCardOpenEvent}
+          >
+            OPEN PACKS
+          </CenterButton>
+        </BuyButtonDiv>
+      )}
     </div>
   );
 };

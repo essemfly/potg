@@ -13,7 +13,6 @@ const AppDiv = styled.div`
 const BgDiv = styled.div`
   width: 100%;
   min-height: 100%;
-  background-color: black;
   background-size: contain;
   z-index: -100;
 `;
