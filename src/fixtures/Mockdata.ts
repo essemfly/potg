@@ -15,6 +15,7 @@ import NYXLLogo from './nyxl.svg';
 import Image1 from './image1.png';
 import Image2 from './image2.png';
 import Image3 from './image3.png';
+import POTGImage from './POTG.png';
 
 const creater: Creater = {
   id: 39,
@@ -79,7 +80,7 @@ for (let i = 0; i < videoUrls.length; i += 1) {
     creater,
     player: players[i],
     name: cardNames[i],
-    images: [images[i]],
+    images: [images[i], POTGImage],
     description: descriptions[i],
     videoUrl: videoUrls[i],
     gameType: GameType.Overwatch,
