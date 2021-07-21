@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const PackImage = styled.img`
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   display: block;
   margin: 30px auto;
   padding: 30px;

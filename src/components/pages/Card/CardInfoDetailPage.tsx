@@ -1,13 +1,23 @@
 import { Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 
 import CardMainView from './CardMainView';
 import CardDetailView from './CardDetailView';
 import { RootState } from '../../../app/store';
 
-const CardInfoDetailPage = (): JSX.Element => {
+interface MatchParams {
+  cardInfoId: string;
+}
+
+const CardInfoDetailPage = ({
+  match,
+}: RouteComponentProps<MatchParams>): JSX.Element => {
+  const { cardInfoId } = match.params;
   const cards = useSelector((state: RootState) => state.cards);
-  const [card] = cards.cards;
+  const card = cards.cards.filter(
+    (card) => card.cardInfo.id.toString() === cardInfoId,
+  )[0];
 
   return (
     <Grid container justifyContent="center">

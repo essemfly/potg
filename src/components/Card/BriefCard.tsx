@@ -35,7 +35,7 @@ const CardBriefDescription = styled.div`
 const BriefCard: React.FC<CardProps> = ({ cardInfo }): JSX.Element => {
   const history = useHistory();
   const handleCardClick: React.MouseEventHandler = () => {
-    history.push('/cards');
+    history.push(`/cards/${cardInfo.id.toString()}`);
   };
 
   return (

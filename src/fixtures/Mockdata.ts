@@ -43,22 +43,22 @@ const player2: Player = {
 };
 
 const videoUrls: string[] = [
-  'https://potg-test-videos.s3.ap-northeast-2.amazonaws.com/nyxl/POTG_NYXL-Friday-1.mp4',
   'https://potg-test-videos.s3.ap-northeast-2.amazonaws.com/nyxl/POTG_NYXL-Flora-1.mp4',
+  'https://potg-test-videos.s3.ap-northeast-2.amazonaws.com/nyxl/POTG_NYXL-Friday-1.mp4',
   'https://potg-test-videos.s3.ap-northeast-2.amazonaws.com/nyxl/POTG_NYXL-Flora-2.mp4',
 ];
 
-const players: Player[] = [player2, player1, player1];
+const players: Player[] = [player1, player2, player1];
 
 const cardNames: string[] = [
-  'Mercy... NOT!',
   'Flora The Sheriff - McCree',
+  'Mercy... NOT!',
   'Flora The Sheriff - Ashe',
 ];
 
 const descriptions: string[] = [
-  "This Mercy has no mercy. Be at the FULL MERCY of Friday's Mercy!",
   "See why The Sheriff show why he's the deadliest gun in the West.",
+  "This Mercy has no mercy. Be at the FULL MERCY of Friday's Mercy!",
   "See why The Sheriff show why he's the deadliest gun in the West.",
 ];
 
@@ -70,7 +70,7 @@ const commonDistribution: CardDistribution = {
   preserved: 0,
 };
 
-const images: string[] = [Image1, Image2, Image3];
+const images: string[] = [Image2, Image1, Image3];
 
 export const sampleCardInfos: CardInfo[] = [];
 
@@ -114,8 +114,8 @@ export const samplePack: Pack = {
 POTG는 개개인 스트리머들이 방송을 하며 갖는 멋진 순간들을 기록하여
 가질 수 있고, 응원할 수 있도록 만든 플랫폼 입니다.
 
-본 팩은 특별히 오버워치 NYXL 팀 소속원들의 스트리밍 영상들로 구성되어 있습니다.
-게이머들이 뽑은 재미있거나, 멋졌던 순간들 디지털 카드로 구성되어 있습니다..
+본 팩은 오버워치 NYXL 팀 소속원들의 스트리밍 영상들로 구성되어 있습니다.
+게이머들이 뽑은 재미있거나, 멋졌던 순간들 디지털 카드로 구성되어 있습니다.
 
 총 18개의 카드 중, 한 팩당 3장의 카드를 이 팩을 통하여 얻으실 수 있습니다.
 개인 구매 제한은 한 건으로 제한됩니다."`,
