@@ -4,11 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { GameType, CardClass } from '../../Card/Card';
+
 import { CardsState } from '../../../redux/cardsSlice';
 import ClosedCard from '../../Card/ClosedCard';
-import PlayerAvatar from '../../Creater/PlayerAvatar';
 import { CenterButton } from '../../../common/CenterButton';
+import CardMainView from '../Card/CardMainView';
+import CardDetailView from '../Card/CardDetailView';
 
 interface CardsInPackProps {
   cardsInPack: CardsState;
@@ -25,7 +26,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: '50%',
+    width: '60%',
     backgroundColor: 'black',
     border: '2px solid #FFF',
     boxShadow: theme.shadows[5],
@@ -67,33 +68,13 @@ const CardOpenView: React.FC<CardsInPackProps> = ({
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">
-        {cardsInPack.cards[currentCard].cardInfo.name}
-      </h2>
-      <Grid container justifyContent="center" spacing={5}>
-        <Grid item xs={6}>
-          <video width="320" height="240" controls autoPlay>
-            <source
-              src={cardsInPack.cards[currentCard].cardInfo.videoUrl}
-              type="video/mp4"
-            />
-            <track kind="captions" srcLang="kr" label="caption" default />
-          </video>
+      <Grid container justifyContent="center">
+        <Grid item xs={5}>
+          <CardMainView cardInfo={cardsInPack.cards[currentCard].cardInfo} />
         </Grid>
-        <Grid item xs={6}>
-          <p>Index: {cardsInPack.cards[currentCard].cardIndex}</p>
-          <p>
-            Game: {GameType[cardsInPack.cards[currentCard].cardInfo.gameType]}
-          </p>
-          <p>
-            Type: {CardClass[cardsInPack.cards[currentCard].cardInfo.cardClass]}
-          </p>
-          <PlayerAvatar
-            player={cardsInPack.cards[currentCard].cardInfo.player}
-          />
-          <p id="simple-modal-description">
-            {cardsInPack.cards[currentCard].cardInfo.description}
-          </p>
+        <Grid item xs={2} />
+        <Grid item xs={5}>
+          <CardDetailView cardInfo={cardsInPack.cards[currentCard].cardInfo} />
         </Grid>
       </Grid>
     </div>
@@ -105,7 +86,7 @@ const CardOpenView: React.FC<CardsInPackProps> = ({
         container
         direction="row"
         justifyContent="center"
-        alignItems="flex-start"
+        alignItems="center"
       >
         <Modal
           open={open}
