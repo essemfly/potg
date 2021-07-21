@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 const PackImage = styled.img`
-  width: 50%;
-  height: 50%;
+  width: 65%;
+  height: 65%;
   display: block;
   margin: 30px auto;
   padding: 30px;
-  border: 2px solid #e8ecfc;
 `;
 
 interface ImageUrlProps {

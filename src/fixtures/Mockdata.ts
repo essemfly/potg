@@ -8,7 +8,7 @@ import {
 } from '../components/Card/Card';
 import { Pack } from '../components/Pack/Pack';
 import { Creater, Player } from '../components/Creater/Creater';
-import PackImg from './nyxlpack.png';
+import PackImg from './pack_nyxl_front.png';
 import Flora from './flora.png';
 import Friday from './friday.png';
 import NYXLLogo from './nyxl.svg';
